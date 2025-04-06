@@ -1,0 +1,46 @@
+---
+const navItems = [
+  { name: "Home", href: "/" },
+  { name: "About", href: "/about" },
+];
+---
+
+<nav class="bg-[#F9F5F0] p-4">
+  <div class="container mx-auto flex justify-between items-center">
+    <a href="/" class="flex items-center space-x-2">
+      <span class="text-[#D4A373] font-semibold">Beis Knesses of New Milford</span>
+    </a>
+    <div class="md:hidden">
+      <button id="menu-toggle" class="text-gray-600 focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
+    </div>
+    <ul id="menu" class="hidden md:flex space-x-4 items-center">
+      {navItems.map((item) => (
+        <li>
+          <a href={item.href} class="text-gray-600 hover:text-gray-900">{item.name}</a>
+        </li>
+      ))}
+      <li>
+        <a href="/donate" class="bg-[#D4A373] text-white px-4 py-2 rounded">Donate</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<script>
+  const menuToggle = document.getElementById("menu-toggle");
+  const menu = document.getElementById("menu");
+  
+  if (menuToggle && menu) {
+    menuToggle.addEventListener("click", () => {
+      menu.classList.toggle("hidden");
+      menu.classList.toggle("flex");
+      menu.classList.toggle("flex-col");
+      menu.classList.toggle("space-y-2");
+      menu.classList.toggle("mt-2");
+    });
+  }
+</script>

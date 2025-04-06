@@ -1,0 +1,25 @@
+---
+const navItems = [
+  { name: "Home", href: "/" },
+  { name: "About", href: "/about" },
+  { name: "Contact", href: "#contact" },
+  { name: "Donate", href: "/donate" },
+
+];
+---
+
+<footer class="bg-[#F9F5F0] py-4">
+  <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+    <div class="flex items-center space-x-2 mb-2 md:mb-0">
+      <span class="text-[#D4A373] font-semibold">Beis Knesses of New Milford</span>
+    </div>
+    <ul class="flex space-x-4 mb-2 md:mb-0">
+      {navItems.map((item) => (
+        <li>
+          <a href={item.href} class="text-gray-600 hover:text-gray-900">{item.name}</a>
+        </li>
+      ))}
+    </ul>
+    <p class="text-gray-600">© 2025 Beis Knesses of New Milford</p>
+  </div>
+</footer>

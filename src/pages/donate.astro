@@ -1,0 +1,83 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import content from "../../public/data/content.json";
+import { Icon } from "../components/Icons";
+---
+
+<Layout
+  title={content.donate.title}
+  description={content.donate.description}
+>
+  <Navbar slot="header" />
+  <main class="max-w-4xl mx-auto px-4 py-12">
+    <div class="text-center mb-16">
+      <h1 class="text-3xl font-bold mb-6">Support Our Community</h1>
+      <p class="text-gray-600 text-xl mb-8">
+        Your generous contributions help sustain our synagogue and support our community programs.
+      </p>
+      <a
+        href={content.donate.donateButton.url}
+        class="inline-flex items-center gap-2 bg-[#CD8C4F] hover:bg-[#B87B40] text-white px-8 py-3 rounded-md text-lg font-medium transition-colors"
+      >
+        <Icon name="heart" className="w-5 h-5" /> Donate Now
+      </a>
+    </div>
+
+    <div class="bg-white rounded-lg shadow-sm p-8 mb-12">
+      <h2 class="text-2xl font-bold mb-4">Membership</h2>
+      <p class="text-gray-600 mb-4">
+        Join our synagogue family
+      </p>
+      
+      <div class="prose max-w-none mb-8">
+        <p class="text-gray-600">
+          {content.donate.membership.description}
+        </p>
+      </div>
+
+      <div class="overflow-hidden rounded-lg border border-gray-200">
+        <table class="w-full">
+          <thead>
+            <tr class="bg-gray-50">
+              <th class="px-6 py-4 text-left text-sm font-semibold text-gray-900">Membership Type</th>
+              <th class="px-6 py-4 text-right text-sm font-semibold text-gray-900">Amount</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200">
+            <tr>
+              <td class="px-6 py-4">
+                <div class="flex items-center gap-3">
+                  <Icon name="users" className="w-5 h-5 text-[#CD8C4F]" />
+                  <span class="font-medium">Operating Membership</span>
+                </div>
+              </td>
+              <td class="px-6 py-4 text-right font-medium">{content.donate.membership.pricing.operating}</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4">
+                <div class="flex items-center gap-3">
+                  <Icon name="building" className="w-5 h-5 text-[#CD8C4F]" />
+                  <span class="font-medium">Building Membership</span>
+                </div>
+              </td>
+              <td class="px-6 py-4 text-right font-medium">{content.donate.membership.pricing.building}</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="px-6 py-4 font-semibold">Total</td>
+              <td class="px-6 py-4 text-right font-semibold">{content.donate.membership.pricing.total}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-lg shadow-sm p-8">
+      <p class="mb-4 text-gray-600">{content.donate.membership.formText}</p>
+      <iframe
+        src={content.donate.membership.formIframeUrl}
+        class="w-full h-[100rem] border-0"
+      />
+    </div>
+  </main>
+</Layout>
