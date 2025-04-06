@@ -16,6 +16,7 @@
         "date": "March 22, 2025",
         "timetable": [
           { "event": "Sof Zeman Krias Shema", "time": "9:34 AM" },
+          { "event": "Rav's Shiur", "time": "9:10 AM" },
           { "event": "Shacharis", "time": "9:20 AM" },
           { "event": "Mincha", "time": "1:25 PM" },
           { "event": "Maariv", "time": "5:22 PM" },

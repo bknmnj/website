@@ -25,7 +25,11 @@ const getShabbatDates = () => {
     return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
   };
   
-  return `${formatDate(friday)} - ${formatDate(saturday)}, ${friday.getFullYear()}`;
+  return {
+    friday: friday,
+    saturday: saturday,
+    formatted: `${formatDate(friday)} - ${formatDate(saturday)}, ${friday.getFullYear()}`
+  };
 };
 
 const shabbatDates = getShabbatDates();
@@ -55,32 +59,34 @@ const shabbatDates = getShabbatDates();
         <h2 class="text-lg font-semibold mb-2 flex items-center">
           <span class="text-[#D4A373] mr-2">●</span> Shabbat Schedule
         </h2>
-        <p class="text-gray-600 mb-4">{shabbatDates}</p>
-          <div>
-            <h3 class="font-semibold">Friday Evening</h3>
-            <p class="text-gray-600">{home.shabbatSchedule.fridayEvening.date}</p>
-            <div class="grid gap-2">
+        <p class="text-gray-600 mb-4">{shabbatDates.formatted}</p>
+        <div class="space-y-6">
+          <div class="bg-white rounded-lg border border-gray-100 p-4">
+            <h3 class="font-semibold text-lg text-[#D4A373] mb-2">Friday Evening</h3>
+            <p class="text-gray-600 mb-3">{shabbatDates.friday.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</p>
+            <div class="grid gap-2 bg-gray-50 rounded-lg p-3">
               {home.shabbatSchedule.fridayEvening.timetable.map((item) => (
-                <div class="flex justify-between even:bg-gray-50 p-1">
-                  <span>{item.event}:</span>
+                <div class="flex justify-between p-1">
+                  <span class="font-medium">{item.event}:</span>
                   <span class="font-bold">{item.time}</span>
                 </div>
               ))}
             </div>
           </div>
 
-          <div class="mt-4">
-            <h3 class="font-semibold">Shabbos Day</h3>
-            <p class="text-gray-600">{home.shabbatSchedule.shabbosDay.date}</p>
-            <div class="grid gap-2">
+          <div class="bg-white rounded-lg border border-gray-100 p-4">
+            <h3 class="font-semibold text-lg text-[#D4A373] mb-2">Shabbos Day</h3>
+            <p class="text-gray-600 mb-3">{shabbatDates.saturday.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</p>
+            <div class="grid gap-2 bg-gray-50 rounded-lg p-3">
               {home.shabbatSchedule.shabbosDay.timetable.map((item) => (
-                <div class="flex justify-between even:bg-gray-50 p-1">
-                  <span>{item.event}:</span>
+                <div class="flex justify-between p-1">
+                  <span class="font-medium">{item.event}:</span>
                   <span class="font-bold">{item.time}</span>
                 </div>
               ))}
             </div>
           </div>
+        </div>
       </div>
     </div>
 
