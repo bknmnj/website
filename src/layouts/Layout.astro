@@ -1,6 +1,8 @@
 ---
 import "../styles/global.css";
+import content from "../../public/data/content.json";
 const { title, description } = Astro.props;
+const baseUrl = content.baseUrl;
 ---
 
 <!DOCTYPE html>
@@ -11,12 +13,36 @@ const { title, description } = Astro.props;
     <meta name="theme-color" content="#F9F5F0" />
     <meta name="description" content={description} />
     <title>{title}</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+    <link rel="canonical" href={`${baseUrl}${Astro.url.pathname}`} />
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={`${baseUrl}${Astro.url.pathname}`} />
+    <meta property="og:image" content={`${baseUrl}/web-app-manifest-512x512.png`} />
+    <meta property="og:site_name" content={content.home.title} />
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={`${baseUrl}/web-app-manifest-512x512.png`} />
+    
+    <!-- Favicon and App Icons -->
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <meta name="apple-mobile-web-app-title" content="BKNM" />
+    <meta name="apple-mobile-web-app-title" content={content.home.title} />
     <link rel="manifest" href="/site.webmanifest" />
+    
+    <!-- Sitemap -->
+    <link rel="sitemap" type="application/xml" href={`${baseUrl}/sitemap.xml`} />
   </head>
   <body class="bg-[#F9F5F0]">
     <header>

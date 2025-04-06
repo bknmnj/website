@@ -1,4 +1,5 @@
 {
+  "baseUrl": "https://bknm.org",
   "home": {
     "title": "Beis Knesses of New Milford",
     "address": "New Milford, NJ 07646",
@@ -39,7 +40,7 @@
     "rabbi": {
       "image": "/rav.jpeg",
       "name": "Rav Yosef Weinberger",
-      "bio": "Rav Yosef Weinberger is a Rebbe and coordinator of the Beit Midrash Track in Yeshivat Frisch. He graduated from Yeshiva University’s Sy Syms School of Business where he received a BS in Accounting and subsequently completed the CPA examination. Upon graduation, he earned semicha from RIETS, as part of the Wexner Semicha Honors Program, as well as a Master’s from the Azrieli Graduate School of Jewish Education.",
+      "bio": "Rav Yosef Weinberger is a Rebbe and coordinator of the Beit Midrash Track in Yeshivat Frisch. He graduated from Yeshiva University's Sy Syms School of Business where he received a BS in Accounting and subsequently completed the CPA examination. Upon graduation, he earned semicha from RIETS, as part of the Wexner Semicha Honors Program, as well as a Master's from the Azrieli Graduate School of Jewish Education.",
       "email": "rav@bknm.org"
     }
   },
