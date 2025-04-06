@@ -27,7 +27,7 @@ const ContactUs: React.FC<ContactUsProps> = ({ address, phone, email }) => {
             </div>
           </div>
 
-          <div className="flex items-start space-x-4">
+          {/* <div className="flex items-start space-x-4">
             <div className="bg-[#FDF4EA] p-3 rounded-full">
               <Phone className="w-6 h-6 text-[#D4A373]" />
             </div>
@@ -35,7 +35,7 @@ const ContactUs: React.FC<ContactUsProps> = ({ address, phone, email }) => {
               <h3 className="font-bold text-xl mb-1">Phone</h3>
               <p className="text-gray-600">{phone}</p>
             </div>
-          </div>
+          </div> */}
 
           <div className="flex items-start space-x-4">
             <div className="bg-[#FDF4EA] p-3 rounded-full">
@@ -54,7 +54,11 @@ const ContactUs: React.FC<ContactUsProps> = ({ address, phone, email }) => {
         </div>
 
         <div className="bg-gray-100 rounded-lg h-full min-h-[300px] flex items-center justify-center">
-          <p className="text-gray-500">[Map Coming Soon]</p>
+          <img
+            src="/nmnj-pin.png"
+            alt="Map"
+            className="w-full h-full object-cover"
+          />
         </div>
       </div>
     </div>
