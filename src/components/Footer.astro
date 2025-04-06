@@ -1,17 +1,17 @@
 ---
+import content from "../../public/data/content.json"; 
 const navItems = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
   { name: "Contact", href: "#contact" },
   { name: "Donate", href: "/donate" },
-
 ];
 ---
 
 <footer class="bg-[#F9F5F0] py-4">
   <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
     <div class="flex items-center space-x-2 mb-2 md:mb-0">
-      <span class="text-[#D4A373] font-semibold">Beis Knesses of New Milford</span>
+      <span class="text-[#D4A373] font-semibold">{content.home.title}</span>
     </div>
     <ul class="flex space-x-4 mb-2 md:mb-0">
       {navItems.map((item) => (
@@ -20,6 +20,6 @@ const navItems = [
         </li>
       ))}
     </ul>
-    <p class="text-gray-600">© 2025 Beis Knesses of New Milford</p>
+    <p class="text-gray-600">{new Date().getFullYear()} {content.home.title}</p>
   </div>
 </footer>

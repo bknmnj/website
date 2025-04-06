@@ -9,18 +9,15 @@ const home = content.home;
 ---
 
 <Layout
-  title="About Beis Knesses of New Milford"
-  description="Learn about our community and Rav Yosef Weinberger."
+  title={`About ${home.title}`}
+  description={`Learn about ${home.title} and ${about.rabbi.name}.`}
 >
   <Navbar slot="header" />
   
   <main class="max-w-4xl mx-auto px-4 py-8">
     <!-- Hero Section -->
     <div class="text-center mb-16">
-      <h1 class="text-3xl font-bold mb-4">About BKNM</h1>
-      <p class="text-gray-600 text-lg">
-        Learn about our history, mission, and the people who make our community special.
-      </p>
+      <h1 class="text-3xl font-bold mb-4">About</h1>
     </div>
 
     <!-- Mission & Vision Section -->

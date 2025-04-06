@@ -1,4 +1,5 @@
 ---
+import content from "../../public/data/content.json";
 const navItems = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
@@ -8,7 +9,7 @@ const navItems = [
 <nav class="bg-[#F9F5F0] p-4">
   <div class="container mx-auto flex justify-between items-center">
     <a href="/" class="flex items-center space-x-2">
-      <span class="text-[#D4A373] font-semibold">Beis Knesses of New Milford</span>
+      <span class="text-[#D4A373] font-semibold">{content.home.title}</span>
     </a>
     <div class="md:hidden">
       <button id="menu-toggle" class="text-gray-600 focus:outline-none">
