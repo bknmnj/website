@@ -1,11 +1,10 @@
 ---
+import dayjs from "dayjs";
 import content from "../../public/data/content.json";
-const today = new Date().toISOString().split("T")[0];
-const formattedDate = new Date(today).toLocaleDateString('en-US', {
-  month: 'numeric',
-  day: 'numeric',
-  year: 'numeric'
-});
+const today = dayjs().format("YYYY-MM-DD");
+const formattedDate = dayjs(today).format("M/D/YYYY");
+console.log(content.home.zip);
+console.log(today,formattedDate);
 const response = await fetch(`https://www.hebcal.com/zmanim?cfg=json&zip=${content.home.zip}&date=${today}`);
 const data = await response.json();
 const zmanim = data.times;
