@@ -13,19 +13,35 @@ const navItems = [
     </a>
     <div class="md:hidden">
       <button id="menu-toggle" class="text-gray-600 focus:outline-none">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16m-7 6h7"></path>
         </svg>
       </button>
     </div>
     <ul id="menu" class="hidden md:flex space-x-4 items-center">
-      {navItems.map((item) => (
-        <li>
-          <a href={item.href} class="text-gray-600 hover:text-gray-900">{item.name}</a>
-        </li>
-      ))}
+      {
+        navItems.map((item) => (
+          <li>
+            <a href={item.href} class="text-gray-600 hover:text-gray-900">
+              {item.name}
+            </a>
+          </li>
+        ))
+      }
       <li>
-        <a href="/donate" class="bg-[#D4A373] text-white px-4 py-2 rounded">Donate</a>
+        <button
+          zeffy-form-link="https://www.zeffy.com/embed/donation-form/new-building-campaign-2?modal=true"
+          class="bg-[#D4A373] text-white px-4 py-2 rounded">Donate</button
+        >
       </li>
     </ul>
   </div>
@@ -34,7 +50,7 @@ const navItems = [
 <script>
   const menuToggle = document.getElementById("menu-toggle");
   const menu = document.getElementById("menu");
-  
+
   if (menuToggle && menu) {
     menuToggle.addEventListener("click", () => {
       menu.classList.toggle("hidden");
