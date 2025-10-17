@@ -9,19 +9,19 @@
       "fridayEvening": {
         "date": "March 21, 2025",
         "timetable": [
-          { "event": "Candle Lighting", "time": "4:25 PM" },
-          { "event": "Mincha, Kabolas Shabbos & Maariv", "time": "4:45 PM" }
+          { "event": "Candle Lighting", "time": "TBD" },
+          { "event": "Mincha, Kabolas Shabbos & Maariv", "time": "TBD" }
         ]
       },
       "shabbosDay": {
         "date": "March 22, 2025",
         "timetable": [
-          { "event": "Sof Zeman Krias Shema", "time": "9:34 AM" },
+          { "event": "Sof Zeman Krias Shema", "time": "TBD" },
           { "event": "Rav's Shiur", "time": "9:10 AM" },
           { "event": "Shacharis", "time": "9:20 AM" },
-          { "event": "Mincha", "time": "1:25 PM" },
-          { "event": "Maariv", "time": "5:22 PM" },
-          { "event": "Shabbos Ends", "time": "5:26 PM" }
+          { "event": "Mincha", "time": "TBD" },
+          { "event": "Maariv", "time": "TBD" },
+          { "event": "Shabbos Ends", "time": "TBD" }
         ]
       }
     },
