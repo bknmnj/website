@@ -3,6 +3,9 @@ import "../styles/global.css";
 import content from "../../public/data/content.json";
 const { title, description } = Astro.props;
 const baseUrl = content.baseUrl;
+const deploymentHost = process.env.VERCEL_URL;
+const assetOrigin = deploymentHost ? `https://${deploymentHost}` : baseUrl;
+const socialImageUrl = `${assetOrigin}/social-preview-arch-v1.png`;
 ---
 
 <!doctype html>
@@ -26,7 +29,14 @@ const baseUrl = content.baseUrl;
     <meta property="og:url" content={`${baseUrl}${Astro.url.pathname}`} />
     <meta
       property="og:image"
-      content={`${baseUrl}/web-app-manifest-512x512.png`}
+      content={socialImageUrl}
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/png" />
+    <meta
+      property="og:image:alt"
+      content="Beis Knesses of New Milford — New Milford, NJ"
     />
     <meta property="og:site_name" content={content.home.title} />
 
@@ -36,7 +46,11 @@ const baseUrl = content.baseUrl;
     <meta name="twitter:description" content={description} />
     <meta
       name="twitter:image"
-      content={`${baseUrl}/web-app-manifest-512x512.png`}
+      content={socialImageUrl}
+    />
+    <meta
+      name="twitter:image:alt"
+      content="Beis Knesses of New Milford — New Milford, NJ"
     />
 
     <!-- Favicon and App Icons -->
