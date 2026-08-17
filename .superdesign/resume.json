@@ -163,7 +163,7 @@
         "src/components/ContactUs.tsx": "64241eed9a6eee320b3b017cec0649980307c83d43d0b95c17b0640480ddedd0",
         "src/components/Icons.tsx": "20bf7f0a54c9f786194a4735c17ac591e2d7e0e4cd7748963f44adf394614f62",
         "src/pages/about.astro": "b54b190d40eb1bedce76584ff819973cedba58c21a61053b727bb6f8045ebd75",
-        "src/pages/donate.astro": "90dadda96ef2b3e56e29dcfae7ae10180198362f9c8a9c3395cdd68745232041",
+        "src/pages/donate.astro": "3b1f610bcb505511bf66037696fa94d4f08d7523bb935ee5c9d599e238f7323b",
         "public/data/content.json": "9a767fd59965e2eb5e4333075203bea45d275430a8162baa50fd280b301dce36"
       },
       "components": [
@@ -179,7 +179,7 @@
           "currentVersion": 1
         }
       },
-      "updatedAt": "2026-08-17T00:44:30Z"
+      "updatedAt": "2026-08-17T01:24:30Z"
     },
     "/donate": {
       "targetKind": "new-ui",
@@ -209,7 +209,7 @@
         "src/components/ContactUs.tsx": "64241eed9a6eee320b3b017cec0649980307c83d43d0b95c17b0640480ddedd0",
         "src/components/Icons.tsx": "20bf7f0a54c9f786194a4735c17ac591e2d7e0e4cd7748963f44adf394614f62",
         "src/pages/about.astro": "b54b190d40eb1bedce76584ff819973cedba58c21a61053b727bb6f8045ebd75",
-        "src/pages/donate.astro": "90dadda96ef2b3e56e29dcfae7ae10180198362f9c8a9c3395cdd68745232041",
+        "src/pages/donate.astro": "3b1f610bcb505511bf66037696fa94d4f08d7523bb935ee5c9d599e238f7323b",
         "public/data/content.json": "9a767fd59965e2eb5e4333075203bea45d275430a8162baa50fd280b301dce36"
       },
       "components": [
@@ -225,7 +225,7 @@
           "currentVersion": 1
         }
       },
-      "updatedAt": "2026-08-17T00:44:30Z"
+      "updatedAt": "2026-08-17T01:24:30Z"
     }
   }
 }

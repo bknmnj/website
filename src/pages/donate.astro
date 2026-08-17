@@ -6,6 +6,7 @@ import content from "../../public/data/content.json";
 import { Icon } from "../components/Icons";
 
 const donate = content.donate;
+const filloutFormId = donate.membership.formIframeUrl.split("/").pop();
 ---
 
 <Layout title={donate.title} description={donate.description}>
@@ -35,8 +36,8 @@ const donate = content.donate;
   </section>
 
   <section class="bg-[#F7F2E8] px-5 py-20 sm:px-6 lg:py-28">
-    <div class="container mx-auto grid items-start gap-8 lg:grid-cols-12 lg:gap-10">
-      <div class="space-y-8 lg:col-span-5">
+    <div class="container mx-auto space-y-8 lg:space-y-10">
+      <div class="grid items-stretch gap-8 lg:grid-cols-2 lg:gap-10">
         <section class="border-t-4 border-[#B48A45] bg-white p-7 shadow-sm sm:p-9" aria-labelledby="give-heading">
           <p class="text-xs font-bold uppercase tracking-[0.18em] text-[#9A7134]">Make a contribution</p>
           <h2 id="give-heading" class="mt-3 text-4xl font-semibold italic text-[#10263B]">Donate Now</h2>
@@ -47,20 +48,6 @@ const donate = content.donate;
           >
             <Icon name="heart" className="h-5 w-5" /> {donate.donateButton.text}
           </a>
-        </section>
-
-        <section class="border border-[#E8DDC8] bg-white p-7 shadow-sm sm:p-9" aria-labelledby="daf-direct-heading">
-          <p class="text-xs font-bold uppercase tracking-[0.18em] text-[#9A7134]">Another way to give</p>
-          <h2 id="daf-direct-heading" class="mt-3 text-3xl font-semibold italic text-[#10263B]">Donate from a Donor-Advised Fund</h2>
-          <p class="mt-4 leading-relaxed text-[#58636D]">
-            Recommend a grant through Fidelity Charitable, DAFgiving360, or BNY Mellon.
-          </p>
-          <div class="mt-7 flex min-h-24 items-center justify-center border border-[#E8DDC8] bg-[#F7F2E8] p-4">
-            <script is:inline>
-              var _dafdirect_settings = "932165312_1111_08f0e17d-2fa6-4c56-943e-d05ddc477a08";
-            </script>
-            <script is:inline src="https://www.dafdirect.org/ddirect/dafdirect4.js"></script>
-          </div>
         </section>
 
         <section class="border-t-4 border-[#B48A45] bg-[#10263B] p-7 text-white shadow-lg sm:p-9" aria-labelledby="membership-heading">
@@ -84,21 +71,101 @@ const donate = content.donate;
         </section>
       </div>
 
-      <section class="overflow-hidden border border-[#E8DDC8] bg-white shadow-sm lg:col-span-7" aria-labelledby="membership-form-heading">
+      <section class="border border-[#E8DDC8] bg-white p-7 shadow-sm sm:p-9 lg:p-12" aria-labelledby="daf-direct-heading">
+        <div class="grid items-center gap-8 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:gap-14">
+          <div>
+            <p class="text-xs font-bold uppercase tracking-[0.18em] text-[#9A7134]">Another way to give</p>
+            <h2 id="daf-direct-heading" class="mt-3 text-4xl font-semibold italic text-[#10263B] sm:text-5xl">Donate from a Donor-Advised Fund</h2>
+            <p class="mt-5 max-w-xl leading-relaxed text-[#58636D]">
+              Recommend a grant through Fidelity Charitable, DAFgiving360, or BNY Mellon.
+            </p>
+          </div>
+          <div class="daf-direct-embed min-w-0 border border-[#E8DDC8] bg-[#F7F2E8] p-5 sm:p-8">
+            <script is:inline>
+              var _dafdirect_settings = "932165312_1111_08f0e17d-2fa6-4c56-943e-d05ddc477a08";
+            </script>
+            <script is:inline src="https://www.dafdirect.org/ddirect/dafdirect4.js"></script>
+          </div>
+        </div>
+      </section>
+
+      <section class="overflow-hidden border border-[#E8DDC8] bg-white shadow-sm" aria-labelledby="membership-form-heading">
         <div class="border-b border-[#E8DDC8] bg-[#F2E9D8] p-7 sm:p-9">
           <p class="text-xs font-bold uppercase tracking-[0.18em] text-[#9A7134]">Become a member</p>
           <h2 id="membership-form-heading" class="mt-3 text-4xl font-semibold italic text-[#10263B]">Membership Application</h2>
           <p class="mt-4 text-[#58636D]">{donate.membership.formText}</p>
         </div>
-        <iframe
-          src={donate.membership.formIframeUrl}
-          title="Beis Knesses of New Milford membership application"
-          loading="lazy"
-          class="block h-[78rem] w-full border-0 sm:h-[92rem]"
-        ></iframe>
+        <div
+          data-fillout-id={filloutFormId}
+          data-fillout-embed-type="standard"
+          data-fillout-inherit-parameters
+          data-fillout-dynamic-resize
+          style="width: 100%; height: 38rem;"
+          aria-label="Beis Knesses of New Milford membership application"
+        ></div>
+        <script is:inline src="https://server.fillout.com/embed/v1/"></script>
       </section>
     </div>
   </section>
 
   <Footer slot="footer" />
 </Layout>
+
+<style is:global>
+  .daf-direct-embed #dafdirectdiv,
+  .daf-direct-embed #dafdirect {
+    box-sizing: border-box !important;
+    max-width: none !important;
+    width: 100% !important;
+  }
+
+  .daf-direct-embed #dafdirectdiv {
+    font-family: "Source Sans 3", sans-serif !important;
+    font-size: 1rem !important;
+    line-height: 1.5 !important;
+  }
+
+  .daf-direct-embed #dafdirect > img:first-child {
+    display: block !important;
+    height: auto !important;
+    margin-inline: auto !important;
+    max-width: min(100%, 250px) !important;
+  }
+
+  .daf-direct-embed #dafdirect label,
+  .daf-direct-embed #dafdirect .whatThis {
+    display: block !important;
+    float: none !important;
+    width: 100% !important;
+  }
+
+  .daf-direct-embed #dafdirect select,
+  .daf-direct-embed #dafdirect input[type="text"] {
+    box-sizing: border-box !important;
+    font: inherit !important;
+    max-width: none !important;
+    min-height: 2.75rem !important;
+    width: 100% !important;
+  }
+
+  .daf-direct-embed #amountNextContain {
+    align-items: end !important;
+    display: grid !important;
+    gap: 1rem !important;
+    grid-template-columns: minmax(0, 1fr) auto !important;
+    width: 100% !important;
+  }
+
+  .daf-direct-embed .dafdirectInputAmount,
+  .daf-direct-embed .dafdirectButtonContain {
+    float: none !important;
+    margin: 0 !important;
+    width: auto !important;
+  }
+
+  .daf-direct-embed .dafdirectButtonContain img {
+    height: auto !important;
+    min-height: 2.75rem !important;
+    width: auto !important;
+  }
+</style>
