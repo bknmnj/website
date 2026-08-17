@@ -4,15 +4,24 @@ const navItems = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
 ];
+const currentPath = Astro.url.pathname.replace(/\/$/, "") || "/";
 ---
 
-<nav class="bg-[#F9F5F0] p-4">
-  <div class="container mx-auto flex justify-between items-center">
-    <a href="/" class="flex items-center space-x-2">
-      <span class="text-[#D4A373] font-semibold">{content.home.title}</span>
+<nav class="sticky top-0 z-50 border-b border-[#E8DDC8] bg-[#F7F2E8]/95 backdrop-blur-md" aria-label="Main navigation">
+  <div class="container mx-auto flex min-h-20 items-center justify-between px-5 sm:px-6">
+    <a href="/" class="flex flex-col leading-none" aria-label={`${content.home.title}, home`}>
+      <span class="text-xl font-bold tracking-tight text-[#10263B] sm:text-2xl">BEIS KNESSES</span>
+      <span class="mt-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#B48A45] sm:text-sm">of New Milford</span>
     </a>
     <div class="md:hidden">
-      <button id="menu-toggle" class="text-gray-600 focus:outline-none">
+      <button
+        id="menu-toggle"
+        class="flex min-h-11 min-w-11 items-center justify-center text-[#10263B]"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-controls="menu"
+        aria-expanded="false"
+      >
         <svg
           class="w-6 h-6"
           fill="none"
@@ -27,18 +36,36 @@ const navItems = [
         </svg>
       </button>
     </div>
-    <ul id="menu" class="hidden md:flex space-x-4 items-center">
+    <ul
+      id="menu"
+      class="absolute left-0 right-0 top-full hidden flex-col gap-1 border-b border-[#E8DDC8] bg-[#F7F2E8] px-5 py-4 shadow-lg md:static md:flex md:flex-row md:items-center md:gap-8 md:border-0 md:bg-transparent md:p-0 md:shadow-none"
+    >
       {
         navItems.map((item) => (
           <li>
-            <a href={item.href} class="text-gray-600 hover:text-gray-900">
+            <a
+              href={item.href}
+              aria-current={currentPath === item.href ? "page" : undefined}
+              class:list={[
+                "flex min-h-11 items-center border-b-2 text-sm font-semibold uppercase tracking-[0.14em] hover:text-[#B48A45]",
+                currentPath === item.href
+                  ? "border-[#B48A45] text-[#10263B]"
+                  : "border-transparent text-[#10263B]",
+              ]}
+            >
               {item.name}
             </a>
           </li>
         ))
       }
       <li>
-        <a href="/donate" class="bg-[#D4A373] text-white px-4 py-2 rounded"
+        <a
+          href="/donate"
+          aria-current={currentPath === "/donate" ? "page" : undefined}
+          class:list={[
+            "flex min-h-11 items-center justify-center border-2 bg-[#10263B] px-6 text-sm font-bold uppercase tracking-[0.14em] text-white hover:bg-[#713B42]",
+            currentPath === "/donate" ? "border-[#B48A45]" : "border-[#10263B]",
+          ]}
           >Donate</a
         >
       </li>
@@ -52,11 +79,11 @@ const navItems = [
 
   if (menuToggle && menu) {
     menuToggle.addEventListener("click", () => {
+      const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
+      menuToggle.setAttribute("aria-expanded", String(!isOpen));
+      menuToggle.setAttribute("aria-label", isOpen ? "Open navigation menu" : "Close navigation menu");
       menu.classList.toggle("hidden");
       menu.classList.toggle("flex");
-      menu.classList.toggle("flex-col");
-      menu.classList.toggle("space-y-2");
-      menu.classList.toggle("mt-2");
     });
   }
 </script>

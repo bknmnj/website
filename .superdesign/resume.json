@@ -1,0 +1,231 @@
+{
+  "schemaVersion": 1,
+  "targets": {
+    "/": {
+      "targetKind": "existing-ui",
+      "projectId": "5a384311-f92b-4097-8110-010b6d43ec71",
+      "baselineDraftId": "b7c22bbb-9f39-43aa-a8fa-e6ec1931b273",
+      "activeDraftId": "622ffa23-c529-475e-b5d0-c3c7276812a0",
+      "designSystemPath": ".superdesign/design-system.md",
+      "contextFiles": [
+        ".superdesign/design-system.md",
+        "src/pages/index.astro",
+        "src/layouts/Layout.astro",
+        "src/components/Navbar.astro",
+        "src/components/Footer.astro",
+        "src/components/Zmanim.tsx",
+        "src/components/ShabbatSchedule.tsx",
+        "src/components/ContactUs.tsx",
+        "src/styles/global.css",
+        "public/data/content.json"
+      ],
+      "fingerprints": {
+        ".superdesign/design-system.md": "c029ea9af0ff126391a39c6cb6755a9845582aa8c5a45d632d97a3c89b32d7b7",
+        "src/pages/index.astro": "583da6838662b7e2aca944ef3ef3687939e7adfe8eda8796b5bcc50d2fc42650",
+        "src/layouts/Layout.astro": "e47b6712c3a91740a9d5c91e9706464132d838facc91dcc24f3fbf67cedc16bd",
+        "src/components/Navbar.astro": "ee5800cfb17c83ac3053236e5e16d08055d2cd0ff58f6a189b1bb49650e6ddb1",
+        "src/components/Footer.astro": "a33d3ce141a6e57b8df573fdb899a7475bbf624231f117804899d53011c86468",
+        "src/components/Zmanim.tsx": "ed83f03bd461dd037c016b830c1cb3ec150656bba3cdd108e7e60e0f17b435fc",
+        "src/components/ShabbatSchedule.tsx": "2d745e41ee3aecb67ba107b6553c61a03128d82823480a5057f747518768d86a",
+        "src/components/ContactUs.tsx": "64241eed9a6eee320b3b017cec0649980307c83d43d0b95c17b0640480ddedd0",
+        "src/styles/global.css": "b5c5517809027075efb52de86bd5877fb6c1e74d6c6ad475508125c2bd086a14",
+        "public/data/content.json": "9a767fd59965e2eb5e4333075203bea45d275430a8162baa50fd280b301dce36"
+      },
+      "components": [
+        {
+          "name": "CampaignBanner",
+          "id": "de09ce18-9b6a-48ac-bb3d-49aa1b73c76e",
+          "sourcePath": "src/layouts/Layout.astro"
+        },
+        {
+          "name": "Navbar",
+          "id": "e4f05775-b6bf-4f09-ace7-c80194c22241",
+          "sourcePath": "src/components/Navbar.astro"
+        },
+        {
+          "name": "Footer",
+          "id": "c3558c38-c5bf-48e0-8ab6-ce75875356af",
+          "sourcePath": "src/components/Footer.astro"
+        }
+      ],
+      "drafts": {
+        "b7c22bbb-9f39-43aa-a8fa-e6ec1931b273": {
+          "title": "BKNM Production Home Reproduction",
+          "visualDirection": "pixel-faithful production baseline",
+          "currentVersion": 1
+        },
+        "91bbfc89-6e57-4b24-9149-bf34ba55db9b": {
+          "title": "Warm Editorial Sanctuary - BKNM Home",
+          "visualDirection": "warm editorial sanctuary with mission storytelling and a generous sacred-light motif",
+          "parentDraftId": "b7c22bbb-9f39-43aa-a8fa-e6ec1931b273",
+          "currentVersion": 1
+        },
+        "b7e73c2c-f7e5-488d-bfce-a357b141bd10": {
+          "title": "BKNM Community Timeboard",
+          "visualDirection": "bold information-first neighborhood timeboard with modular grid structure",
+          "parentDraftId": "b7c22bbb-9f39-43aa-a8fa-e6ec1931b273",
+          "currentVersion": 1
+        },
+        "b9742cf9-72f1-4464-9c71-9017a74facad": {
+          "title": "BKNM Neighborhood Risograph Redesign",
+          "visualDirection": "radical electric-cobalt risograph neighborhood poster with tactile noticeboard utility",
+          "parentDraftId": "b7c22bbb-9f39-43aa-a8fa-e6ec1931b273",
+          "currentVersion": 1
+        },
+        "762ef634-da0b-443f-ad19-2c843b645141": {
+          "title": "BKNM — Sacred Night Almanac",
+          "visualDirection": "radical midnight celestial almanac organized around sacred time and luminous orbital geometry",
+          "parentDraftId": "b7c22bbb-9f39-43aa-a8fa-e6ec1931b273",
+          "currentVersion": 1
+        },
+        "7f56fad5-df32-4a75-9210-49cc6c2b775b": {
+          "title": "BKNM - Contemporary Sanctuary Redesign",
+          "visualDirection": "faith-centered contemporary sanctuary with architectural thresholds, siddur-like rules, and dignified nonprofit stewardship",
+          "parentDraftId": "b7c22bbb-9f39-43aa-a8fa-e6ec1931b273",
+          "currentVersion": 1
+        },
+        "f19a6cae-18ef-4cb1-9939-5e1974abe846": {
+          "title": "BKNM - Living Kehillah Home",
+          "visualDirection": "warm human-centered kehillah and nonprofit storytelling around prayer, learning, chesed, and belonging",
+          "parentDraftId": "b7c22bbb-9f39-43aa-a8fa-e6ec1931b273",
+          "currentVersion": 1
+        },
+        "1fad8d7c-f9ed-42f3-aa30-3a5e356c9a9f": {
+          "title": "BKNM - Contemporary Sanctuary (Content Fidelity Update)",
+          "visualDirection": "faith-centered contemporary sanctuary with complete canonical schedule content",
+          "parentDraftId": "7f56fad5-df32-4a75-9210-49cc6c2b775b",
+          "currentVersion": 1
+        },
+        "6d78f2b1-7b98-4650-9584-f3727f2e5871": {
+          "title": "BKNM - Living Kehillah Home (Fidelity Fix)",
+          "visualDirection": "warm human-centered kehillah and nonprofit storytelling with rendered canonical schedule content",
+          "parentDraftId": "f19a6cae-18ef-4cb1-9939-5e1974abe846",
+          "currentVersion": 1
+        },
+        "7367c6dc-43b9-456a-bb3a-210a9e464f93": {
+          "title": "BKNM - Contemporary Sanctuary (Layout Fix)",
+          "visualDirection": "contemporary sanctuary with corrected desktop hero spacing",
+          "parentDraftId": "1fad8d7c-f9ed-42f3-aa30-3a5e356c9a9f",
+          "currentVersion": 1
+        },
+        "fbe91c59-af1d-427b-afac-ea80d8f17aac": {
+          "title": "BKNM - Living Kehillah Home (Hero Imagery Fix)",
+          "visualDirection": "warm living-kehillah identity with intentional community and Torah editorial illustration panels",
+          "parentDraftId": "6d78f2b1-7b98-4650-9584-f3727f2e5871",
+          "currentVersion": 1
+        },
+        "d1c53323-d8dd-431a-9a11-f46258e768ff": {
+          "title": "BKNM - Contemporary Sanctuary (Schedule Layout Correction)",
+          "visualDirection": "faith-centered contemporary sanctuary with non-overlapping prayer schedule in normal document flow",
+          "parentDraftId": "7367c6dc-43b9-456a-bb3a-210a9e464f93",
+          "currentVersion": 1
+        },
+        "5bba0b14-f952-4245-858d-987a8a8b938b": {
+          "title": "BKNM - Contemporary Sanctuary (Refined Copy Update)",
+          "visualDirection": "approved ink-ivory-brass direction with source-faithful modern Orthodox shtiebel wording",
+          "parentDraftId": "d1c53323-d8dd-431a-9a11-f46258e768ff",
+          "currentVersion": 1
+        },
+        "622ffa23-c529-475e-b5d0-c3c7276812a0": {
+          "title": "BKNM - Contemporary Sanctuary (Abstract Architectural Detail)",
+          "visualDirection": "approved source-faithful direction with wordless architectural campaign artwork",
+          "parentDraftId": "5bba0b14-f952-4245-858d-987a8a8b938b",
+          "currentVersion": 1
+        }
+      },
+      "updatedAt": "2026-08-17T00:44:30Z"
+    },
+    "/about": {
+      "targetKind": "new-ui",
+      "projectId": "5a384311-f92b-4097-8110-010b6d43ec71",
+      "activeDraftId": "94f1afae-894d-4cb6-84f6-9c3ddd87c917",
+      "sourceTarget": "/",
+      "sourceDraftId": "622ffa23-c529-475e-b5d0-c3c7276812a0",
+      "designSystemPath": ".superdesign/design-system.md",
+      "contextFiles": [
+        ".superdesign/design-system.md",
+        "src/styles/global.css",
+        "src/layouts/Layout.astro",
+        "src/components/Navbar.astro",
+        "src/components/Footer.astro",
+        "src/components/ContactUs.tsx",
+        "src/components/Icons.tsx",
+        "src/pages/about.astro",
+        "src/pages/donate.astro",
+        "public/data/content.json"
+      ],
+      "fingerprints": {
+        ".superdesign/design-system.md": "c029ea9af0ff126391a39c6cb6755a9845582aa8c5a45d632d97a3c89b32d7b7",
+        "src/styles/global.css": "b5c5517809027075efb52de86bd5877fb6c1e74d6c6ad475508125c2bd086a14",
+        "src/layouts/Layout.astro": "e47b6712c3a91740a9d5c91e9706464132d838facc91dcc24f3fbf67cedc16bd",
+        "src/components/Navbar.astro": "ee5800cfb17c83ac3053236e5e16d08055d2cd0ff58f6a189b1bb49650e6ddb1",
+        "src/components/Footer.astro": "a33d3ce141a6e57b8df573fdb899a7475bbf624231f117804899d53011c86468",
+        "src/components/ContactUs.tsx": "64241eed9a6eee320b3b017cec0649980307c83d43d0b95c17b0640480ddedd0",
+        "src/components/Icons.tsx": "20bf7f0a54c9f786194a4735c17ac591e2d7e0e4cd7748963f44adf394614f62",
+        "src/pages/about.astro": "b54b190d40eb1bedce76584ff819973cedba58c21a61053b727bb6f8045ebd75",
+        "src/pages/donate.astro": "90dadda96ef2b3e56e29dcfae7ae10180198362f9c8a9c3395cdd68745232041",
+        "public/data/content.json": "9a767fd59965e2eb5e4333075203bea45d275430a8162baa50fd280b301dce36"
+      },
+      "components": [
+        { "name": "CampaignBanner", "id": "de09ce18-9b6a-48ac-bb3d-49aa1b73c76e", "sourcePath": "src/layouts/Layout.astro" },
+        { "name": "Navbar", "id": "e4f05775-b6bf-4f09-ace7-c80194c22241", "sourcePath": "src/components/Navbar.astro" },
+        { "name": "Footer", "id": "c3558c38-c5bf-48e0-8ab6-ce75875356af", "sourcePath": "src/components/Footer.astro" }
+      ],
+      "drafts": {
+        "94f1afae-894d-4cb6-84f6-9c3ddd87c917": {
+          "title": "About | Beis Knesses of New Milford",
+          "visualDirection": "approved editorial mission, principles, leadership, and contact flow",
+          "parentDraftId": "622ffa23-c529-475e-b5d0-c3c7276812a0",
+          "currentVersion": 1
+        }
+      },
+      "updatedAt": "2026-08-17T00:44:30Z"
+    },
+    "/donate": {
+      "targetKind": "new-ui",
+      "projectId": "5a384311-f92b-4097-8110-010b6d43ec71",
+      "activeDraftId": "4568d3b1-7068-487f-8eb6-0bb164147105",
+      "sourceTarget": "/",
+      "sourceDraftId": "622ffa23-c529-475e-b5d0-c3c7276812a0",
+      "designSystemPath": ".superdesign/design-system.md",
+      "contextFiles": [
+        ".superdesign/design-system.md",
+        "src/styles/global.css",
+        "src/layouts/Layout.astro",
+        "src/components/Navbar.astro",
+        "src/components/Footer.astro",
+        "src/components/ContactUs.tsx",
+        "src/components/Icons.tsx",
+        "src/pages/about.astro",
+        "src/pages/donate.astro",
+        "public/data/content.json"
+      ],
+      "fingerprints": {
+        ".superdesign/design-system.md": "c029ea9af0ff126391a39c6cb6755a9845582aa8c5a45d632d97a3c89b32d7b7",
+        "src/styles/global.css": "b5c5517809027075efb52de86bd5877fb6c1e74d6c6ad475508125c2bd086a14",
+        "src/layouts/Layout.astro": "e47b6712c3a91740a9d5c91e9706464132d838facc91dcc24f3fbf67cedc16bd",
+        "src/components/Navbar.astro": "ee5800cfb17c83ac3053236e5e16d08055d2cd0ff58f6a189b1bb49650e6ddb1",
+        "src/components/Footer.astro": "a33d3ce141a6e57b8df573fdb899a7475bbf624231f117804899d53011c86468",
+        "src/components/ContactUs.tsx": "64241eed9a6eee320b3b017cec0649980307c83d43d0b95c17b0640480ddedd0",
+        "src/components/Icons.tsx": "20bf7f0a54c9f786194a4735c17ac591e2d7e0e4cd7748963f44adf394614f62",
+        "src/pages/about.astro": "b54b190d40eb1bedce76584ff819973cedba58c21a61053b727bb6f8045ebd75",
+        "src/pages/donate.astro": "90dadda96ef2b3e56e29dcfae7ae10180198362f9c8a9c3395cdd68745232041",
+        "public/data/content.json": "9a767fd59965e2eb5e4333075203bea45d275430a8162baa50fd280b301dce36"
+      },
+      "components": [
+        { "name": "CampaignBanner", "id": "de09ce18-9b6a-48ac-bb3d-49aa1b73c76e", "sourcePath": "src/layouts/Layout.astro" },
+        { "name": "Navbar", "id": "e4f05775-b6bf-4f09-ace7-c80194c22241", "sourcePath": "src/components/Navbar.astro" },
+        { "name": "Footer", "id": "c3558c38-c5bf-48e0-8ab6-ce75875356af", "sourcePath": "src/components/Footer.astro" }
+      ],
+      "drafts": {
+        "4568d3b1-7068-487f-8eb6-0bb164147105": {
+          "title": "Donate to Beis Knesses of New Milford",
+          "visualDirection": "approved nonprofit support, DAF, membership pricing, and application flow",
+          "parentDraftId": "622ffa23-c529-475e-b5d0-c3c7276812a0",
+          "currentVersion": 1
+        }
+      },
+      "updatedAt": "2026-08-17T00:44:30Z"
+    }
+  }
+}

@@ -3,23 +3,28 @@ import content from "../../public/data/content.json";
 const navItems = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
-  { name: "Contact", href: "#contact" },
+  { name: "Contact", href: "/#contact" },
   { name: "Donate", href: "/donate" },
 ];
 ---
 
-<footer class="bg-[#F9F5F0] py-4">
-  <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
-    <div class="flex items-center space-x-2 mb-2 md:mb-0">
-      <span class="text-[#D4A373] font-semibold">{content.home.title}</span>
-    </div>
-    <ul class="flex space-x-4 mb-2 md:mb-0">
+<footer class="border-t border-[#B48A45]/25 bg-[#10263B] py-14 text-white">
+  <div class="container mx-auto px-5 text-center sm:px-6">
+    <a href="/" class="inline-block font-serif text-3xl italic hover:text-[#D8B979]">
+      {content.home.title}
+    </a>
+    <ul class="my-9 flex flex-wrap justify-center gap-x-8 gap-y-4">
       {navItems.map((item) => (
         <li>
-          <a href={item.href} class="text-gray-600 hover:text-gray-900">{item.name}</a>
+          <a
+            href={item.href}
+            class="text-xs font-bold uppercase tracking-[0.18em] text-white/75 hover:text-[#D8B979]"
+          >{item.name}</a>
         </li>
       ))}
     </ul>
-    <p class="text-gray-600">{new Date().getFullYear()} {content.home.title}</p>
+    <p class="border-t border-white/10 pt-7 text-xs uppercase tracking-[0.16em] text-white/50">
+      {new Date().getFullYear()} {content.home.title}
+    </p>
   </div>
 </footer>

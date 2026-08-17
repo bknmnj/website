@@ -1,4 +1,4 @@
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 import React from "react";
 
 interface ContactUsProps {
@@ -9,55 +9,41 @@ interface ContactUsProps {
 
 const ContactUs: React.FC<ContactUsProps> = ({ address, phone, email }) => {
   return (
-    <div className="bg-white rounded-lg shadow-sm p-8 max-w-4xl mx-auto">
-      <div className="text-center mb-8">
-        <h2 className="text-2xl font-bold mb-4">Contact Us</h2>
-        <p className="text-gray-600">Have a question? We're here to help!</p>
-      </div>
+    <div className="mx-auto max-w-5xl border border-[#E8DDC8] bg-white p-7 shadow-sm sm:p-10 lg:p-12">
+      <div className="grid items-center gap-12 md:grid-cols-2 lg:gap-16">
+        <div>
+          <h2 className="text-5xl font-semibold italic text-[#10263B]">Contact Us</h2>
+          <p className="mt-3 text-lg text-[#58636D]">Have a question? We're here to help!</p>
 
-      <div className="grid md:grid-cols-2 gap-8">
-        <div className="space-y-6">
-          <div className="flex items-start space-x-4">
-            <div className="bg-[#FDF4EA] p-3 rounded-full">
-              <MapPin className="w-6 h-6 text-[#D4A373]" />
+          <div className="mt-10 space-y-7">
+            <div className="flex items-start gap-5">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center border border-[#B48A45]/45 bg-[#F7F2E8]">
+                <MapPin className="h-6 w-6 text-[#9A7134]" aria-hidden="true" />
+              </div>
+              <div>
+                <h3 className="text-xs font-bold uppercase tracking-[0.16em] text-[#10263B]">Address</h3>
+                <p className="mt-1 text-[#58636D]">{address}</p>
+              </div>
             </div>
-            <div>
-              <h3 className="font-bold text-xl mb-1">Address</h3>
-              <p className="text-gray-600">{address}</p>
-            </div>
-          </div>
-
-          {/* <div className="flex items-start space-x-4">
-            <div className="bg-[#FDF4EA] p-3 rounded-full">
-              <Phone className="w-6 h-6 text-[#D4A373]" />
-            </div>
-            <div>
-              <h3 className="font-bold text-xl mb-1">Phone</h3>
-              <p className="text-gray-600">{phone}</p>
-            </div>
-          </div> */}
-
-          <div className="flex items-start space-x-4">
-            <div className="bg-[#FDF4EA] p-3 rounded-full">
-              <Mail className="w-6 h-6 text-[#D4A373]" />
-            </div>
-            <div>
-              <h3 className="font-bold text-xl mb-1">Email</h3>
-              <a
-                href={`mailto:${email}`}
-                className="text-[#D4A373] hover:underline"
-              >
-                {email}
-              </a>
+            <div className="flex items-start gap-5">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center border border-[#B48A45]/45 bg-[#F7F2E8]">
+                <Mail className="h-6 w-6 text-[#9A7134]" aria-hidden="true" />
+              </div>
+              <div>
+                <h3 className="text-xs font-bold uppercase tracking-[0.16em] text-[#10263B]">Email</h3>
+                <a href={`mailto:${email}`} className="mt-1 inline-block text-[#713B42] underline-offset-4 hover:underline">
+                  {email}
+                </a>
+              </div>
             </div>
           </div>
         </div>
 
-        <div className="bg-gray-100 rounded-lg h-full min-h-[300px] flex items-center justify-center">
+        <div className="min-h-72 overflow-hidden border border-[#E8DDC8] bg-[#E8DDC8]/45 p-2 sm:min-h-80">
           <img
             src="/nmnj-pin.png"
-            alt="Map"
-            className="w-full h-full object-cover"
+            alt="Map showing New Milford, New Jersey"
+            className="h-full min-h-72 w-full object-cover sm:min-h-80"
           />
         </div>
       </div>
