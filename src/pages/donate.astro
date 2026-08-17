@@ -1,92 +1,171 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
 import content from "../../public/data/content.json";
 import { Icon } from "../components/Icons";
+
+const donate = content.donate;
+const filloutFormId = donate.membership.formIframeUrl.split("/").pop();
 ---
 
-<Layout
-  title={content.donate.title}
-  description={content.donate.description}
->
+<Layout title={donate.title} description={donate.description}>
   <Navbar slot="header" />
-  <main class="max-w-4xl mx-auto px-4 py-12">
-    <div class="text-center mb-16">
-      <h1 class="text-3xl font-bold mb-6">Donate</h1>
+
+  <section class="relative overflow-hidden bg-gradient-to-b from-[#10263B] to-[#0A1D2E] px-5 py-24 text-white sm:px-6 sm:py-28" aria-labelledby="donate-heading">
+    <div
+      class="pointer-events-none absolute inset-0 opacity-20"
+      style="background-image: radial-gradient(circle at 50% -20%, #B48A45, transparent 45%);"
+      aria-hidden="true"
+    ></div>
+    <div class="container relative z-10 mx-auto text-center">
+      <p class="mb-6 inline-block border border-[#B48A45]/50 px-5 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-[#D8B979]">
+        Support Beis Knesses
+      </p>
+      <h1 id="donate-heading" class="mx-auto max-w-4xl text-5xl font-semibold italic leading-[0.98] sm:text-6xl lg:text-7xl">
+        {donate.title}
+      </h1>
+      <p class="mx-auto mt-7 max-w-2xl text-lg text-white/75 sm:text-xl">{donate.description}</p>
       <a
-        href={content.donate.donateButton.url}
-        class="inline-flex items-center gap-2 bg-[#CD8C4F] hover:bg-[#B87B40] text-white px-8 py-3 rounded-md text-base font-medium transition-colors"
+        href={donate.donateButton.url}
+        class="mt-9 inline-flex min-h-12 items-center justify-center gap-3 bg-[#B48A45] px-9 text-sm font-bold uppercase tracking-[0.16em] text-[#10263B] hover:bg-white"
       >
-        <Icon name="heart" className="w-5 h-5" /> Donate Now
+        <Icon name="heart" className="h-5 w-5" /> {donate.donateButton.text}
       </a>
     </div>
+  </section>
 
-    <section class="bg-white rounded-lg shadow-sm p-8 mb-12" aria-labelledby="daf-direct-heading">
-      <div class="text-center mb-6">
-        <h2 id="daf-direct-heading" class="text-2xl font-bold mb-2">Donate from a Donor-Advised Fund</h2>
-        <p class="text-gray-600">
-          Recommend a grant through Fidelity Charitable, DAFgiving360, or BNY Mellon.
-        </p>
-      </div>
-      <div class="flex justify-center">
-        <script is:inline>
-          var _dafdirect_settings = "932165312_1111_08f0e17d-2fa6-4c56-943e-d05ddc477a08";
-        </script>
-        <script is:inline src="https://www.dafdirect.org/ddirect/dafdirect4.js"></script>
-      </div>
-    </section>
+  <section class="bg-[#F7F2E8] px-5 py-20 sm:px-6 lg:py-28">
+    <div class="container mx-auto space-y-8 lg:space-y-10">
+      <div class="grid items-stretch gap-8 lg:grid-cols-2 lg:gap-10">
+        <section class="border-t-4 border-[#B48A45] bg-white p-7 shadow-sm sm:p-9" aria-labelledby="give-heading">
+          <p class="text-xs font-bold uppercase tracking-[0.18em] text-[#9A7134]">Make a contribution</p>
+          <h2 id="give-heading" class="mt-3 text-4xl font-semibold italic text-[#10263B]">Donate Now</h2>
+          <p class="mt-5 leading-relaxed text-[#58636D]">{donate.description}</p>
+          <a
+            href={donate.donateButton.url}
+            class="mt-7 inline-flex min-h-12 w-full items-center justify-center gap-3 bg-[#10263B] px-8 text-center text-sm font-bold uppercase tracking-[0.16em] text-white hover:bg-[#713B42]"
+          >
+            <Icon name="heart" className="h-5 w-5" /> {donate.donateButton.text}
+          </a>
+        </section>
 
-    <div class="bg-white rounded-lg shadow-sm p-8 mb-12">
-      <h2 class="text-2xl font-bold mb-4">Membership</h2>
-      
-      <div class="prose max-w-none mb-8">
-        <p class="text-gray-600">
-          {content.donate.membership.description}
-        </p>
+        <section class="border-t-4 border-[#B48A45] bg-[#10263B] p-7 text-white shadow-lg sm:p-9" aria-labelledby="membership-heading">
+          <h2 id="membership-heading" class="text-4xl font-semibold italic">{donate.membership.title}</h2>
+          <p class="mt-5 leading-relaxed text-white/72">{donate.membership.description}</p>
+
+          <dl class="mt-8 divide-y divide-white/10 border-y border-white/10">
+            <div class="flex items-center justify-between gap-5 py-5">
+              <dt class="flex items-center gap-3 font-semibold"><Icon name="users" className="h-5 w-5 text-[#D8B979]" /> Operating Membership</dt>
+              <dd class="text-xl font-bold text-[#D8B979]">{donate.membership.pricing.operating}</dd>
+            </div>
+            <div class="flex items-center justify-between gap-5 py-5">
+              <dt class="flex items-center gap-3 font-semibold"><Icon name="building" className="h-5 w-5 text-[#D8B979]" /> Building Membership</dt>
+              <dd class="text-xl font-bold text-[#D8B979]">{donate.membership.pricing.building}</dd>
+            </div>
+            <div class="flex items-center justify-between gap-5 py-5">
+              <dt class="text-sm font-bold uppercase tracking-[0.16em]">Total</dt>
+              <dd class="text-2xl font-bold">{donate.membership.pricing.total}</dd>
+            </div>
+          </dl>
+        </section>
       </div>
 
-      <div class="overflow-hidden rounded-lg border border-gray-200">
-        <table class="w-full">
-          <thead>
-            <tr class="bg-gray-50">
-              <th class="px-6 py-4 text-left text-sm font-semibold text-gray-900">Membership Type</th>
-              <th class="px-6 py-4 text-right text-sm font-semibold text-gray-900">Amount</th>
-            </tr>
-          </thead>
-          <tbody class="divide-y divide-gray-200">
-            <tr>
-              <td class="px-6 py-4">
-                <div class="flex items-center gap-3">
-                  <Icon name="users" className="w-5 h-5 text-[#CD8C4F]" />
-                  <span class="font-medium">Operating Membership</span>
-                </div>
-              </td>
-              <td class="px-6 py-4 text-right font-medium">{content.donate.membership.pricing.operating}</td>
-            </tr>
-            <tr>
-              <td class="px-6 py-4">
-                <div class="flex items-center gap-3">
-                  <Icon name="building" className="w-5 h-5 text-[#CD8C4F]" />
-                  <span class="font-medium">Building Membership</span>
-                </div>
-              </td>
-              <td class="px-6 py-4 text-right font-medium">{content.donate.membership.pricing.building}</td>
-            </tr>
-            <tr class="bg-gray-50">
-              <td class="px-6 py-4 font-semibold">Total</td>
-              <td class="px-6 py-4 text-right font-semibold">{content.donate.membership.pricing.total}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      <section class="border border-[#E8DDC8] bg-white p-7 shadow-sm sm:p-9 lg:p-12" aria-labelledby="daf-direct-heading">
+        <div class="grid items-center gap-8 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:gap-14">
+          <div>
+            <p class="text-xs font-bold uppercase tracking-[0.18em] text-[#9A7134]">Another way to give</p>
+            <h2 id="daf-direct-heading" class="mt-3 text-4xl font-semibold italic text-[#10263B] sm:text-5xl">Donate from a Donor-Advised Fund</h2>
+            <p class="mt-5 max-w-xl leading-relaxed text-[#58636D]">
+              Recommend a grant through Fidelity Charitable, DAFgiving360, or BNY Mellon.
+            </p>
+          </div>
+          <div class="daf-direct-embed min-w-0 border border-[#E8DDC8] bg-[#F7F2E8] p-5 sm:p-8">
+            <script is:inline>
+              var _dafdirect_settings = "932165312_1111_08f0e17d-2fa6-4c56-943e-d05ddc477a08";
+            </script>
+            <script is:inline src="https://www.dafdirect.org/ddirect/dafdirect4.js"></script>
+          </div>
+        </div>
+      </section>
+
+      <section class="overflow-hidden border border-[#E8DDC8] bg-white shadow-sm" aria-labelledby="membership-form-heading">
+        <div class="border-b border-[#E8DDC8] bg-[#F2E9D8] p-7 sm:p-9">
+          <p class="text-xs font-bold uppercase tracking-[0.18em] text-[#9A7134]">Become a member</p>
+          <h2 id="membership-form-heading" class="mt-3 text-4xl font-semibold italic text-[#10263B]">Membership Application</h2>
+          <p class="mt-4 text-[#58636D]">{donate.membership.formText}</p>
+        </div>
+        <div
+          data-fillout-id={filloutFormId}
+          data-fillout-embed-type="standard"
+          data-fillout-inherit-parameters
+          data-fillout-dynamic-resize
+          style="width: 100%; height: 38rem;"
+          aria-label="Beis Knesses of New Milford membership application"
+        ></div>
+        <script is:inline src="https://server.fillout.com/embed/v1/"></script>
+      </section>
     </div>
+  </section>
 
-    <div class="bg-white rounded-lg shadow-sm p-8">
-      <p class="mb-4 text-gray-600">{content.donate.membership.formText}</p>
-      <iframe
-        src={content.donate.membership.formIframeUrl}
-        class="w-full h-[100rem] border-0"
-      />
-    </div>
-  </main>
+  <Footer slot="footer" />
 </Layout>
+
+<style is:global>
+  .daf-direct-embed #dafdirectdiv,
+  .daf-direct-embed #dafdirect {
+    box-sizing: border-box !important;
+    max-width: none !important;
+    width: 100% !important;
+  }
+
+  .daf-direct-embed #dafdirectdiv {
+    font-family: "Source Sans 3", sans-serif !important;
+    font-size: 1rem !important;
+    line-height: 1.5 !important;
+  }
+
+  .daf-direct-embed #dafdirect > img:first-child {
+    display: block !important;
+    height: auto !important;
+    margin-inline: auto !important;
+    max-width: min(100%, 250px) !important;
+  }
+
+  .daf-direct-embed #dafdirect label,
+  .daf-direct-embed #dafdirect .whatThis {
+    display: block !important;
+    float: none !important;
+    width: 100% !important;
+  }
+
+  .daf-direct-embed #dafdirect select,
+  .daf-direct-embed #dafdirect input[type="text"] {
+    box-sizing: border-box !important;
+    font: inherit !important;
+    max-width: none !important;
+    min-height: 2.75rem !important;
+    width: 100% !important;
+  }
+
+  .daf-direct-embed #amountNextContain {
+    align-items: end !important;
+    display: grid !important;
+    gap: 1rem !important;
+    grid-template-columns: minmax(0, 1fr) auto !important;
+    width: 100% !important;
+  }
+
+  .daf-direct-embed .dafdirectInputAmount,
+  .daf-direct-embed .dafdirectButtonContain {
+    float: none !important;
+    margin: 0 !important;
+    width: auto !important;
+  }
+
+  .daf-direct-embed .dafdirectButtonContain img {
+    height: auto !important;
+    min-height: 2.75rem !important;
+    width: auto !important;
+  }
+</style>
